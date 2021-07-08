@@ -1,0 +1,24 @@
+global:
+  scrape_interval:   15s # By default, scrape targets every 15 seconds.
+
+  # Attach these labels to any time series or alerts when communicating with
+  # external systems (federation, remote storage, Alertmanager).
+  external_labels:
+    monitor: 'bootifull-monitoring'
+
+scrape_configs:
+
+- job_name: 'springbatch'
+  scrape_interval: 20s
+  static_configs:
+  - targets: ['pushgateway:9091']
+
+- job_name: 'carrello'
+
+  # Override the global default and scrape targets from this job every 10 seconds.
+  scrape_interval: 40s
+  metrics_path: '/actuator/prometheus'
+  bearer_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NzA1MTY4NDcsImlzcyI6Iml0YWxpYW9ubGluZSIsInN1YiI6ImNhbmFsZW9ubGluZSIsImV4cCI6MjIwMDE0MzI0M30.Z8PbgBtw9t2Ndl4czrB8PKNztjNk8ZHmDDvPGU0RmqE=
+
+  static_configs:
+  - targets: ['192.168.48.1:8080']  

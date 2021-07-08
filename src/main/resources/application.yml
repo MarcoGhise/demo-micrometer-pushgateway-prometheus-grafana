@@ -1,0 +1,15 @@
+prometheus:
+  push:
+    rate: 60000
+  job:
+    name: HelloWord
+  grouping:
+    key: Demo
+  pushgateway:
+    url: pushgateway:9091
+job:
+  cron: 0 0/1 * ? * *
+spring:
+  batch:
+    job:
+      enabled: true  
