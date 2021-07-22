@@ -41,4 +41,8 @@ In this Fork I added/updated these features:
 - Added log messages to monitoring-demo app;
 - Created a new instance of monitoring-demo called node2; 
 - Added order.purchase metric;
-- Added notification alerts inside Grafana.               
+- Added notification alerts inside Grafana.   
+
+## Original Article
+Pull and Push Metrics inside Grafana
+https://techannotation.wordpress.com/2021/07/09/pull-and-push-metrics-inside-grafana/            
